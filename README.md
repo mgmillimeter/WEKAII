@@ -125,7 +125,7 @@ These findings are valuable for educators, school leaders, and policy makers aim
 
 ------------------------------------------------------------------
 
-Absolutely! Here's a clear and **layman’s explanation** of the top-level rules in your decision tree, written in context with your **study's objective**:
+# Decision Tree Explanation
 
 ---
 
