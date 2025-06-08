@@ -104,6 +104,20 @@ These rules supported the decision tree findings and provided interpretable insi
 
 ---
 
+### In simple terms: J48 tells us how to predict student performance, like a step-by-step decision flow, while Apriori shows us strong patterns that often happen together, like “students who study less and are in the Arts group usually perform poorly.”
+
+So, while J48 answers “How can we classify students?”, Apriori answers “What common traits do low or high performers share?”
+
+Together, they give a fuller picture:
+
+J48 = prediction and structure
+
+Apriori = patterns and insights
+
+This supports your objective to understand what affects student performance and how different traits are connected.
+
+
+
 ## 🧩 Summary of Methodological Choices
 
 | Method | Purpose | Reason for Selection |
