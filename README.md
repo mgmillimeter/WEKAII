@@ -134,13 +134,25 @@ _Table 2: Detecting Outlier Summary_
   
 ## 2.3 Transformation (Feature Engineering)
 1. Derived Variables
-Two derived variables were generated to facilitate classification tasks:
-- The Total Score was computed as the sum of five subject scores, represented mathematically as:
+To enhance the dataset for predictive modeling, two key derived variables were created:
+
+Total Score (total_score):
+This variable represents the student’s overall academic performance, calculated by summing the scores across five subjects:
   
 ![image](https://github.com/user-attachments/assets/34d4f799-d723-405c-9ceb-ebb8bf22b2b3)
 
-where _Si_ represents the score for each (English, Mathematics, Science, Social Science, and Art & Culture).
-- The Performance Category was created using the 20th and 80th percentiles to ensure balanced class sizes
+where _Si_ orresponds to the score in one of the individual subjects.
+- Performance Category (performance_category):
+  
+To convert the continuous total scores into discrete classes suitable for classification tasks, the 20th and 80th percentiles of the total score distribution were used as cut-off points:
+
+- Low Performance: total score ≤ 20th percentile
+
+- Average Performance: total score > 20th percentile and < 80th percentile
+
+- High Performance: total score ≥ 80th percentile
+
+This method helps ensure that each category contains a sufficient and relatively balanced number of cases. Using percentiles also accounts for the data's actual distribution, rather than applying arbitrary fixed thresholds, which improves both the interpretability and performance of classification models.
 
 2. Encoding
 - Categorical variables, such as parental education, guardian type, and school group, were converted into numerical format using One-Hot Encoding to allow machine learning algorithms to process them effectively. This technique creates separate binary columns for each category, preserving all available information without introducing artificial ranking. Since the number of features remained reasonable after encoding, dimensionality reduction was not necessary, allowing the models to consider all relevant factors during analysis.
@@ -165,27 +177,41 @@ where _Si_ represents the score for each (English, Mathematics, Science, Social 
 
 3.1.1 Descriptive Statistics
 
-| Variable         | Mean  | Std. Dev | Min  | Max  |
-|-------------------|-------|----------|------|------|
-| English Score     | 58.0  | 19.0     | 0    | 100  |
-| Math Score        | 55.0  | 21.0     | 0    | 100  |
-| Science Score     | 53.0  | 20.0     | 0    | 100  |
-| Social Science    | 60.0  | 16.0     | 0    | 100  |
-| Art & Culture     | 65.0  | 17.0     | 0    | 100  |
-| Total Score       | 291.0 | 65.0     | 54   | 500  |
-| Study Time (hrs)  | 4.2   | 1.8      | 0    | 10   |
-| Attendance (%)    | 80.0  | 15.0     | 0    | 100  |
-| Age (years)       | 16.5  | 1.7      | 13   | 20   |
-| Family Size       | 5.0   | 1.5      | 1    | 10   |
+| Variable         | Mean   | Std. Dev | Min | Max |
+| ---------------- | ------ | -------- | --- | --- |
+| English Score    | 73.61  | 15.35    | 18  | 100 |
+| Math Score       | 72.94  | 15.82    | 33  | 100 |
+| Science Score    | 73.52  | 15.12    | 33  | 100 |
+| Social Science   | 74.47  | 14.95    | 36  | 100 |
+| Art & Culture    | 76.24  | 13.62    | 36  | 100 |
+| Total Score      | 370.78 | 67.73    | 220 | 489 |
+| Study Time (hrs) | 4.75   | 2.19     | 1   | 16  |
+| Attendance (%)   | 74.03  | 13.29    | 30  | 100 |
+| Age              | 16.62  | 0.96     | 15  | 19  |
+| Family Size      | 4.50   | 1.66     | 0   | 11  |
+
 
 *Note: N = 8,608 student records.*
 
 _Table 1: Descriptive Statistics of Student Performance Variables_
 
-Table 1 summarizes the key continuous variables. Subject scores showed moderate variation, with averages ranging from 53 to 65 out of 100. Total Score averaged 291, reflecting the combined subject scores. Study Time varied widely, with some students reporting no study time, while others studied up to 10 hours daily. Attendance also ranged from full absence to perfect attendance. Age and family size showed typical distributions for secondary school students.
+The dataset reflects generally strong academic performance, with average subject scores clustered in the mid-70s. Total scores ranged widely, indicating variability in overall academic achievement. Study time averaged nearly 5 hours per day, while attendance rates averaged 74%, suggesting room for improvement in classroom participation. The student population primarily consisted of individuals aged 15 to 19, with typical family sizes of 4 to 5 members.
 
+3.1.2 Correlation Analysis
 
+The correlation analysis showed that study time had a strong positive relationship with total score (r = 0.84), indicating that increased study hours are closely linked to better academic performance. Attendance also demonstrated a moderate positive correlation with total score (r = 0.49), suggesting that regular class participation contributes meaningfully to student achievement.
 
+![correlation_heatmap](https://github.com/user-attachments/assets/d91d9766-21da-4ba1-9b15-10fc335780d0)
+
+_Figure 1: Correlation Analysis_
+
+3.1.3 Model Performance
+
+| Model               | Accuracy |
+| -----------------   | ------   |
+| J48 Decision Tree   | 74.27    |
+| Random Forest       | 79.38    |
+| SVM                 | 72.94    |
 
 
 
