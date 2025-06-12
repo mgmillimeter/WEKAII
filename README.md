@@ -90,7 +90,10 @@ Action Taken:
 - filled missing location with "Urban" (the most common value in dataset).
 
 2. Duplicate and Inconsistent Records
-- No duplicate rows detected. Inconsistencies in categorical values (e.g., Hons vs. Honors, urban vs. Urban) were standardized.
+- No duplicate rows detected.
+
+Action Taken:
+- Inconsistencies in categorical values (e.g., Hons vs. Honors, urban vs. Urban) were standardized.
 
 3. Outliers
 - Outlier detection applied using the Interquartile Range (IQR method, 1.5 × IQR rule). The Interquartile Range (IQR) method detects outliers by measuring data spread. Calculate the IQR (Q3 - Q1) and set lower/upper bounds at **Q1 - 1.5×IQR** and **Q3 + 1.5×IQR**. Data points outside these bounds are flagged as outliers. A simple, robust rule for identifying extreme values in skewed or non-normal distributions.
@@ -127,7 +130,7 @@ _Table 2: Detecting Outlier Summary_
 - All other outliers in subject scores were retained since they were minimal and likely reflect genuine performance.
 
 4. Normalization
-- Not applied, as tree-based models are scale-invariant.
+- Normalization was not applied because the selected models (such as Decision Trees and Random Forests) are not sensitive to the scale or range of the input values. These algorithms make decisions based on data splits rather than mathematical distances, allowing them to handle variables with different units or magnitudes without requiring normalization.
   
 ## 2.3 Transformation (Feature Engineering)
 1. Derived Variables
@@ -143,7 +146,14 @@ where _Si_ represents the score for each (English, Mathematics, Science, Social 
 - Categorical variables, such as parental education, guardian type, and school group, were converted into numerical format using One-Hot Encoding to allow machine learning algorithms to process them effectively. This technique creates separate binary columns for each category, preserving all available information without introducing artificial ranking. Since the number of features remained reasonable after encoding, dimensionality reduction was not necessary, allowing the models to consider all relevant factors during analysis.
 
 3. Dimensionality Reduction
-- Not applied; the feature space was manageable.
+- Dimensionality reduction techniques were not applied since the total number of features remained relatively small and manageable. Retaining all available variables allowed the models to consider as much information as possible without risking overfitting or excessive computational complexity.
+
+## 2.4 Data Mining (Pattern Extraction)
+- Models Applied:
+Three classification algorithms were implemented to predict student performance: Decision Tree, Random Forest, and Support Vector Machine (SVM). These models were selected to provide a balance between interpretability (Decision Tree), robustness (Random Forest), and non-linear classification capabilities (SVM).
+
+- Evaluation:
+An 80/20 stratified train-test split was applied to maintain class proportions across both training and testing sets. Model performance was evaluated using accuracy and F1-score to capture both overall correctness and performance across all classes. Feature importance was extracted from tree-based models to identify key predictors contributing to student performance outcomes.
 
 
 
