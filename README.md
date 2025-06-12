@@ -1,4 +1,4 @@
-
+  
 # 📊 Multivariate Analysis of Socioeconomic and Educational Factors Influencing Student Performance in Bangladesh
 
 ## Abstract
@@ -177,6 +177,8 @@ This method helps ensure that each category contains a sufficient and relatively
 
 3.1.1 Descriptive Statistics
 
+_Table 1: Descriptive Statistics of Student Performance Variables_
+
 | Variable         | Mean   | Std. Dev | Min | Max |
 | ---------------- | ------ | -------- | --- | --- |
 | English Score    | 73.61  | 15.35    | 18  | 100 |
@@ -193,8 +195,6 @@ This method helps ensure that each category contains a sufficient and relatively
 
 *Note: N = 8,608 student records.*
 
-_Table 1: Descriptive Statistics of Student Performance Variables_
-
 The dataset reflects generally strong academic performance, with average subject scores clustered in the mid-70s. Total scores ranged widely, indicating variability in overall academic achievement. Study time averaged nearly 5 hours per day, while attendance rates averaged 74%, suggesting room for improvement in classroom participation. The student population primarily consisted of individuals aged 15 to 19, with typical family sizes of 4 to 5 members.
 
 3.1.2 Correlation Analysis
@@ -207,11 +207,52 @@ _Figure 1: Correlation Analysis_
 
 3.1.3 Model Performance
 
+_Table 2: Classification Model Performance Summary_
+
 | Model               | Accuracy |
 | -----------------   | ------   |
-| J48 Decision Tree   | 74.27    |
-| Random Forest       | 79.38    |
-| SVM                 | 72.94    |
+| J48 Decision Tree   | 75.78    |
+| Random Forest       | 77.95    |
+| SVM                 | 77.57    |
+
+All three models performed well, with Random Forest achieving the highest accuracy (77.95%), followed by SVM (77.57%) and J48 (75.78%). Random Forest’s ensemble approach captured complex patterns more effectively, while SVM handled non-linear relationships. Despite slightly lower accuracy, J48 offers interpretable rules useful for practical decision-making.
+
+3.1.4 Feature Importance
+
+_Table 3: Top Predictive Features_
+
+| Rank | Attribute                         | InfoGain | Importance (%) |
+| ---- | --------------------------------- | -------- | -------------- |
+| 1    | `studytime`                       | 0.610647 | **35.55%**     |
+| 2    | `stu_group_Science`               | 0.460502 | **26.82%**     |
+| 3    | `stu_group_Commerce`              | 0.330212 | **19.23%**     |
+| 4    | `attendance`                      | 0.225069 | **13.11%**     |
+| 5    | `location_city`                   | 0.017566 | 1.02%          |
+| 6    | `mother_education_Hons`           | 0.009069 | 0.53%          |
+| 7    | `school_type_Semi_Govt`           | 0.009032 | 0.53%          |
+| 8    | `age`                             | 0.008335 | 0.49%          |
+| 9    | `location_urban2`                 | 0.007677 | 0.45%          |
+| 10   | `school_type_Private`             | 0.006769 | 0.39%          |
+
+The most influential predictors of student performance are studytime, stu_group, and attendance, indicating that academic habits and chosen academic track strongly affect outcomes. Socio-demographic variables contribute only marginally to performance prediction.
+
+3.2 Discussion Based on the KDD Process
+
+Step 1: Selection (Data Collection)
+- The dataset provided relevant academic, demographic, and socioeconomic information on Bangladeshi secondary students, suitable for investigating performance prediction. As the data was obtained from Kaggle, it may not fully represent the entire national student population, and some self-reported variables may introduce minor inaccuracies.
+
+Step 2: Preprocessing (Data Cleaning)
+- Data cleaning addressed missing values, inconsistencies, and outliers to ensure reliability. Mode imputation was used for categorical missing values, while unrealistic age values were filtered out. Categorical variables were converted into numerical format through one-hot encoding to prepare the data for machine learning algorithms.
+
+Step 3: Transformation (Feature Engineering)
+- A new target variable, performance category, was created to group students based on academic performance levels, facilitating multi-class classification. After encoding, the number of features remained manageable, and no dimensionality reduction was necessary.
+
+Step 4: Data Mining (Key Findings from Analysis)
+- Three classification algorithms were applied: Decision Tree (J48), Random Forest, and Support Vector Machine (SVM). Among them, Random Forest achieved the highest accuracy (77.95%), followed closely by SVM (77.57%) and J48 (75.78%). Feature importance analysis using Information Gain identified studytime, academic group, and attendance as the most influential predictors of student performance. In contrast, many socioeconomic factors such as parental education, job status, and family size contributed minimally to prediction accuracy.
+
+Step 5: Interpretation & Evaluation
+- The findings highlight that students’ study habits, choice of academic track, and consistent attendance play a more significant role in academic success than most background characteristics. These results suggest that educational interventions focusing on improving study discipline, appropriate academic guidance, and attendance monitoring may yield meaningful improvements in student outcomes. However, limitations include the restricted scope of available features, the absence of psychological or motivational factors, and potential sample bias. Future research may benefit from more comprehensive datasets and the integration of additional variables to capture a fuller picture of academic performance drivers.
+
 
 
 
