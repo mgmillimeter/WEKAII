@@ -219,9 +219,20 @@ _Table 2: Classification Model Performance Summary_
 
 All three models performed well, with Random Forest achieving the highest accuracy (77.95%), followed by SVM (77.57%) and J48 (75.78%). Random Forest’s ensemble approach captured complex patterns more effectively, while SVM handled non-linear relationships. Despite slightly lower accuracy, J48 offers interpretable rules useful for practical decision-making.
 
+_Table 3: Random Forest Classification Performance (Per Class)_
+
+| Class             | Precision  | Recall     | F1-Score   |
+| ----------------- | ---------- | ---------- | ---------- |
+| High              | 0.6670     | 0.8359     | 0.7419     |
+| Average           | 0.8914     | 0.7190     | 0.7960     |
+| Low               | 0.6829     | 0.9029     | 0.7776     |
+| **Macro Average** | **0.7471** | **0.8193** | **0.7718** |
+
+The Random Forest model performed well, especially in identifying low-performing students with 90% recall, which is useful for early interventions. It was most accurate for average performers (89% precision), but slightly overestimated some high performers (67% precision). With a macro F1-score of 77%, the model strikes a good balance between catching at-risk students and correctly classifying stronger ones.
+
 3.1.4 Feature Importance
 
-_Table 3: Top Predictive Features_
+_Table 4: Top Predictive Features_
 
 | Rank | Attribute                         | InfoGain | Importance (%) |
 | ---- | --------------------------------- | -------- | -------------- |
@@ -237,6 +248,23 @@ _Table 3: Top Predictive Features_
 | 10   | `school_type_Private`             | 0.006769 | 0.39%          |
 
 The most influential predictors of student performance are studytime, stu_group, and attendance, indicating that academic habits and chosen academic track strongly affect outcomes. Socio-demographic variables contribute only marginally to performance prediction.
+
+3.1.5 Statistical Validation of Key Features
+
+_Table 5: Chi-Square Ranking & Test (Categorical vs Class)_
+
+| Feature    | Chi² Statistic | p-value |
+| ---------- | -------------- | ------- |
+| stu\_group | 8120.55        | 0.000   |
+
+_Table 6: ANOVA (Numerical vs Class)_
+
+| Feature    | F-Statistic | p-value |
+| ---------- | ----------- | ------- |
+| studytime  | 4533.19     | 0.000   |
+| attendance | 830.89      | 0.000   |
+
+To strengthen the validity of the identified key predictors, statistical tests were conducted. A Chi-square test confirmed a strong association between academic track (stu_group) and performance category (χ² = 8120.55, p < 0.001). ANOVA further demonstrated that both study time (F = 4533.19, p < 0.001) and attendance (F = 830.89, p < 0.001) have significant effects on academic performance. These statistical results provide additional confirmation that study habits, academic track selection, and class attendance are highly influential in determining student achievement, consistent with the machine learning model outputs.
 
 3.2 Discussion Based on the KDD Process
 
