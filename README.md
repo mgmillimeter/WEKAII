@@ -253,6 +253,22 @@ Step 4: Data Mining (Key Findings from Analysis)
 Step 5: Interpretation & Evaluation
 - The findings highlight that students’ study habits, choice of academic track, and consistent attendance play a more significant role in academic success than most background characteristics. These results suggest that educational interventions focusing on improving study discipline, appropriate academic guidance, and attendance monitoring may yield meaningful improvements in student outcomes. However, limitations include the restricted scope of available features, the absence of psychological or motivational factors, and potential sample bias. Future research may benefit from more comprehensive datasets and the integration of additional variables to capture a fuller picture of academic performance drivers.
 
+## 4. Conclusion
+
+- This study examined the combined influence of socioeconomic and educational factors on the academic performance of secondary school students in Bangladesh using the Knowledge Discovery in Databases (KDD) framework. By applying three machine learning classification models—Decision Tree, Random Forest, and Support Vector Machine—key predictors of student performance were identified. Among these, study time, academic track (Commerce or Science), and attendance emerged as the most influential factors across models, while extracurricular participation, parental involvement, and guardianship showed smaller but positive effects. Parental education, occupation, and other demographic variables demonstrated limited direct predictive power. These findings provide actionable insights for educators and policymakers seeking to design targeted interventions. The multivariate, data-driven approach applied here contributes to the growing field of educational data mining, highlighting the potential of predictive modeling to inform student-centered educational policies.
+
+## 5. Recommendations
+
+For Educational Institutions and Policymakers
+
+- Interventions should prioritize students in Commerce tracks who exhibit lower study time and poor attendance. Programs that strengthen study habits and time management may help improve academic outcomes. Attendance monitoring systems should be reinforced to promote consistent school participation. Schools may also consider expanding extracurricular activities to increase student engagement, while actively involving parents in supporting their children's academic progress.
+
+For Future Research
+
+- Future studies should consider larger, nationally representative datasets to enhance generalizability. Incorporating psychological and motivational factors may offer deeper insights into non-cognitive contributors to student performance. Applying more advanced analytical techniques such as ensemble methods, neural networks, and longitudinal analyses may further improve predictive accuracy. Cross-country or regional comparative studies could also be conducted to assess the external validity of these findings.
+
+
+
 
 
 
