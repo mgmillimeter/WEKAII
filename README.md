@@ -84,13 +84,16 @@ The study follows the Knowledge Discovery in Databases (KDD) framework, which co
 ## 2.2 Preprocessing (Data Cleaning)
 
 1. Missing Values
-- Only one missing value was identified (in location), addressed using mode imputation (most frequent value: "Urban").
+- Only one missing value was identified (in location).
+  
+Action Taken:
+- filled missing location with "Urban" (the most common value in dataset).
 
 2. Duplicate and Inconsistent Records
 - No duplicate rows detected. Inconsistencies in categorical values (e.g., Hons vs. Honors, urban vs. Urban) were standardized.
 
 3. Outliers
-- Outlier detection applied using the Interquartile Range (IQR) method. Academic score outliers retained, as extreme performance values are legitimate in education. Age filtered: kept students aged 13–20 (3 unrealistic entries removed).
+- Outlier detection applied using the Interquartile Range (IQR method, 1.5 × IQR rule). The Interquartile Range (IQR) method detects outliers by measuring data spread. Calculate the IQR (Q3 - Q1) and set lower/upper bounds at **Q1 - 1.5×IQR** and **Q3 + 1.5×IQR**. Data points outside these bounds are flagged as outliers. A simple, robust rule for identifying extreme values in skewed or non-normal distributions.
 
 _Table 1: Quantified summary of outliers detected using the IQR (Interquartile Range) method_
 
@@ -128,14 +131,20 @@ _Table 2: Detecting Outlier Summary_
   
 ## 2.3 Transformation (Feature Engineering)
 1. Derived Variables
-- Total Score: Sum of the five subject scores. Performance Category: Created using 20th and 80th percentiles to balance class sizes.
+Two derived variables were generated to facilitate classification tasks:
+- The Total Score was computed as the sum of five subject scores, represented mathematically as:
+  
+![image](https://github.com/user-attachments/assets/34d4f799-d723-405c-9ceb-ebb8bf22b2b3)
+
+where _Si_ represents the score for each (English, Mathematics, Science, Social Science, and Art & Culture).
+- The Performance Category was created using the 20th and 80th percentiles to ensure balanced class sizes
 
 2. Encoding
-- One-Hot Encoding applied to 13 categorical variables for machine learning compatibility.
+- Categorical variables, such as parental education, guardian type, and school group, were converted into numerical format using One-Hot Encoding to allow machine learning algorithms to process them effectively. This technique creates separate binary columns for each category, preserving all available information without introducing artificial ranking. Since the number of features remained reasonable after encoding, dimensionality reduction was not necessary, allowing the models to consider all relevant factors during analysis.
 
 3. Dimensionality Reduction
 - Not applied; the feature space was manageable.
-- 
+
 
 
 
