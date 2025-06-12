@@ -164,7 +164,6 @@ where _Si_ represents the score for each (English, Mathematics, Science, Social 
 3.1 Results Presentation
 
 3.1.1 Descriptive Statistics
-_Table 1: Descriptive Statistics of Student Performance Variables_
 
 | Variable         | Mean  | Std. Dev | Min  | Max  |
 |-------------------|-------|----------|------|------|
@@ -180,6 +179,11 @@ _Table 1: Descriptive Statistics of Student Performance Variables_
 | Family Size       | 5.0   | 1.5      | 1    | 10   |
 
 *Note: N = 8,608 student records.*
+
+_Table 1: Descriptive Statistics of Student Performance Variables_
+
+Table 1 summarizes the key continuous variables. Subject scores showed moderate variation, with averages ranging from 53 to 65 out of 100. Total Score averaged 291, reflecting the combined subject scores. Study Time varied widely, with some students reporting no study time, while others studied up to 10 hours daily. Attendance also ranged from full absence to perfect attendance. Age and family size showed typical distributions for secondary school students.
+
 
 
 
