@@ -158,6 +158,29 @@ where _Si_ represents the score for each (English, Mathematics, Science, Social 
 ## 2.5 Interpretation & Evaluation
 - The Decision Tree model identified Academic Group, Study Time, and Attendance as the most influential predictors of student performance. Model performance was validated through comparison across multiple classifiers, demonstrating consistent results. Visualizations, including decision trees and feature importance plots, were generated to enhance interpretability and support the understanding of key patterns within the data.
 
+---
+
+## 3. Results and Discussion
+3.1 Results Presentation
+
+3.1.1 Descriptive Statistics
+_Table 1: Descriptive Statistics of Student Performance Variables_
+
+| Variable         | Mean  | Std. Dev | Min  | Max  |
+|-------------------|-------|----------|------|------|
+| English Score     | 58.0  | 19.0     | 0    | 100  |
+| Math Score        | 55.0  | 21.0     | 0    | 100  |
+| Science Score     | 53.0  | 20.0     | 0    | 100  |
+| Social Science    | 60.0  | 16.0     | 0    | 100  |
+| Art & Culture     | 65.0  | 17.0     | 0    | 100  |
+| Total Score       | 291.0 | 65.0     | 54   | 500  |
+| Study Time (hrs)  | 4.2   | 1.8      | 0    | 10   |
+| Attendance (%)    | 80.0  | 15.0     | 0    | 100  |
+| Age (years)       | 16.5  | 1.7      | 13   | 20   |
+| Family Size       | 5.0   | 1.5      | 1    | 10   |
+
+*Note: N = 8,608 student records.*
+
 
 
 
