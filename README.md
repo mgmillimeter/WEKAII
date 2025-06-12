@@ -72,7 +72,9 @@ The study follows the Knowledge Discovery in Databases (KDD) framework, which co
 | `stu_group` | Nominal | Academic group (Science, Arts, Commerce) |
 
 1. Data Source
-- The dataset was obtained from Kaggle’s Bangladesh Student Performance EDA repository. The data integrates school records and student survey responses.
+- While the dataset offers valuable insight into student performance patterns in Bangladesh, it was obtained from a publicly available Kaggle repository. The exact sampling frame, geographic coverage, and institutional types represented in the dataset are not fully specified. As a result, the sample may not perfectly reflect the full diversity of Bangladesh’s national secondary education system, including regional variations (urban vs rural), types of institutions (public, private, madrasah), or socioeconomic strata.
+
+Furthermore, since some variables may rely on student or parental self-reports (e.g. parental education, employment, internet access), minor reporting inaccuracies or recall bias may exist.
 
 2. Variables of Interest
 - Dependent Variables: Academic subject scores (English, Math, Science, Social Science, Art & Culture), Total Score, and derived Performance Category (Low, Average, High).
@@ -239,7 +241,7 @@ The most influential predictors of student performance are studytime, stu_group,
 3.2 Discussion Based on the KDD Process
 
 Step 1: Selection (Data Collection)
-- The dataset provided relevant academic, demographic, and socioeconomic information on Bangladeshi secondary students, suitable for investigating performance prediction. As the data was obtained from Kaggle, it may not fully represent the entire national student population, and some self-reported variables may introduce minor inaccuracies.
+- An important limitation of the present study is the potential sample bias due to the unknown representativeness of the Kaggle dataset. While the internal data quality was carefully addressed through cleaning and preprocessing, external generalizability requires caution. Future studies could benefit from nationally representative, government-sourced educational data to validate these findings across broader student populations.
 
 Step 2: Preprocessing (Data Cleaning)
 - Data cleaning addressed missing values, inconsistencies, and outliers to ensure reliability. Mode imputation was used for categorical missing values, while unrealistic age values were filtered out. Categorical variables were converted into numerical format through one-hot encoding to prepare the data for machine learning algorithms.
@@ -265,7 +267,9 @@ For Educational Institutions and Policymakers
 
 For Future Research
 
-- Future studies should consider larger, nationally representative datasets to enhance generalizability. Incorporating psychological and motivational factors may offer deeper insights into non-cognitive contributors to student performance. Applying more advanced analytical techniques such as ensemble methods, neural networks, and longitudinal analyses may further improve predictive accuracy. Cross-country or regional comparative studies could also be conducted to assess the external validity of these findings.
+- Future research should aim to work with larger and more representative datasets that better capture students across different regions, school types, and socioeconomic backgrounds in Bangladesh. This would help improve the generalizability of the findings and ensure that conclusions apply to a wider population. Incorporating additional variables such as psychological factors (e.g., motivation, stress, learning habits, and emotional well-being) may provide deeper insights into non-academic influences on student performance that were not captured in this study.
+
+Moreover, applying more advanced data analysis techniques — such as deep learning models, ensemble approaches, or hybrid methods — could potentially improve the accuracy and depth of predictions. Longitudinal studies, which follow students over time, may also reveal how academic performance evolves and how early interventions affect long-term outcomes. Finally, cross-country or regional comparisons could help determine whether the observed patterns are specific to Bangladesh or reflect broader global trends in education.
 
 
 
