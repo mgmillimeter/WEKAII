@@ -3,7 +3,7 @@
 
 ## Abstract
 
-Student academic performance is shaped by a complex interaction of socioeconomic, educational, and behavioral factors. This study applies a multivariate data mining approach to examine how these variables jointly influence secondary school student performance in Bangladesh. Using the Knowledge Discovery in Databases (KDD) framework, the research involved data selection, preprocessing, transformation through feature engineering and one-hot encoding, followed by model development and evaluation. A publicly available dataset from Kaggle was analyzed using three machine learning classification algorithms: Decision Tree (J48), Random Forest, and Support Vector Machine (SVM). Among the models, Random Forest achieved the highest classification accuracy (77.95%), followed by SVM (77.57%) and Decision Tree (75.78%). Across all models, academic track (Science or Commerce), study time, and attendance consistently emerged as the strongest predictors of academic performance, while variables such as extracurricular activities, parental involvement, and internet access contributed more modestly. Parental education and employment showed limited direct influence in the models. The findings offer both theoretical contributions to educational data mining literature and practical insights for designing targeted interventions that support student learning through academic engagement and behavioral support.
+Student academic performance is shaped by a complex interacstion of socioeconomic, educational, and behavioral factors. This study applies a multivariate data mining approach to examine how these variables jointly influence secondary school student performance in Bangladesh. Using the Knowledge Discovery in Databases (KDD) framework, the research involved data selection, preprocessing, transformation through feature engineering and one-hot encoding, followed by model development and evaluation. A publicly available dataset from Kaggle was analyzed using three machine learning classification algorithms: Decision Tree (J48), Random Forest, and Support Vector Machine (SVM). Among the models, Random Forest achieved the highest classification accuracy (77.95%), followed by SVM (77.57%) and Decision Tree (75.78%). Across all models, academic track (Science or Commerce), study time, and attendance consistently emerged as the strongest predictors of academic performance, while variables such as extracurricular activities, parental involvement, and internet access contributed more modestly. Parental education and employment showed limited direct influence in the models. The findings offer both theoretical contributions to educational data mining literature and practical insights for designing targeted interventions that support student learning through academic engagement and behavioral support.
 
 ## Keywords
 
@@ -266,16 +266,6 @@ For Educational Institutions and Policymakers
 For Future Research
 
 - Future studies should consider larger, nationally representative datasets to enhance generalizability. Incorporating psychological and motivational factors may offer deeper insights into non-cognitive contributors to student performance. Applying more advanced analytical techniques such as ensemble methods, neural networks, and longitudinal analyses may further improve predictive accuracy. Cross-country or regional comparative studies could also be conducted to assess the external validity of these findings.
-
-
-
-
-
-
-
-
-
-
 
 
 
