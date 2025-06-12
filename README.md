@@ -149,11 +149,14 @@ where _Si_ represents the score for each (English, Mathematics, Science, Social 
 - Dimensionality reduction techniques were not applied since the total number of features remained relatively small and manageable. Retaining all available variables allowed the models to consider as much information as possible without risking overfitting or excessive computational complexity.
 
 ## 2.4 Data Mining (Pattern Extraction)
-- Models Applied:
-Three classification algorithms were implemented to predict student performance: Decision Tree, Random Forest, and Support Vector Machine (SVM). These models were selected to provide a balance between interpretability (Decision Tree), robustness (Random Forest), and non-linear classification capabilities (SVM).
+1. Models Applied:
+- Three classification algorithms were implemented to predict student performance: Decision Tree, Random Forest, and Support Vector Machine (SVM). These models were selected to provide a balance between interpretability (Decision Tree), robustness (Random Forest), and non-linear classification capabilities (SVM).
 
-- Evaluation:
-An 80/20 stratified train-test split was applied to maintain class proportions across both training and testing sets. Model performance was evaluated using accuracy and F1-score to capture both overall correctness and performance across all classes. Feature importance was extracted from tree-based models to identify key predictors contributing to student performance outcomes.
+2. Evaluation:
+- An 80/20 stratified train-test split was applied to maintain class proportions across both training and testing sets. Model performance was evaluated using accuracy and F1-score to capture both overall correctness and performance across all classes. Feature importance was extracted from tree-based models to identify key predictors contributing to student performance outcomes.
+
+## 2.5 Interpretation & Evaluation
+- The Decision Tree model identified Academic Group, Study Time, and Attendance as the most influential predictors of student performance. Model performance was validated through comparison across multiple classifiers, demonstrating consistent results. Visualizations, including decision trees and feature importance plots, were generated to enhance interpretability and support the understanding of key patterns within the data.
 
 
 
